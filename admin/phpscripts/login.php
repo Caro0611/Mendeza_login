@@ -32,8 +32,8 @@ function logIn($username, $password, $ip)
             $IncreaseAttemptQuery = "UPDATE tbl_user SET user_attempt = user_attempt + 1 WHERE user_id={$id}";
             $resetAttempt = mysqli_query($link, $IncreaseAttemptQuery);
 
-            $message = "Username and or password is incorrect. <br> Please make sure your caplock key is turned off.";
-            if ($user_attempt > 0) {
+            $message = "Login Attempt failed <br> Verify your user id and password and try again.";
+            if ($user_attempt < 3) { //if user_attempt <3 times display $message and number of attempt
                 $message .= "You have {$user_attempt} times more before get locked.";
             } else {
                 $message = 'locked';

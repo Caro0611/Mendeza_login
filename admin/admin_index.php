@@ -6,7 +6,7 @@ confirm_logged_in();
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Welcome to your admin panel</title>
+    <title>WELCOME!</title>
 </head>
 <body>
 <?php
@@ -17,10 +17,10 @@ if ($time < "12") {
 } else if ($time >= "12" && $time < "17") {
     $greeting = "Good afternoon!";
 } else if ($time >= "17") {
-    $greeting = "Good night!";
+    $greeting = "Good evening!";
 }
 ?>
 <h3><?php echo $greeting . ' ' . $_SESSION['user_name']; ?></h3>
-<h5><?php echo 'Last Login in ' . $_SESSION['user_date']; ?></h5>
+<h5><?php echo 'Last Login time ' . $_SESSION['user_date']; ?></h5>
 </body>
 </html>
