@@ -13,11 +13,11 @@ confirm_logged_in();
 $time = date("H");
 
 if ($time < "12") {
-    $greeting = "Good morning!";
+    $greeting = "Good morning Buenos dias!";
 } else if ($time >= "12" && $time < "17") {
-    $greeting = "Good afternoon!";
+    $greeting = "Good afternoon! Buenas tardes!";
 } else if ($time >= "17") {
-    $greeting = "Good evening!";
+    $greeting = "Good evening! Buenas noches!";
 }
 ?>
 <h3><?php echo $greeting . ' ' . $_SESSION['user_name']; ?></h3>

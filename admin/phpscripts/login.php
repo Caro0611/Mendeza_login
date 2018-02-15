@@ -25,13 +25,13 @@ function logIn($username, $password, $ip)
             $lastLog = "UPDATE tbl_user SET user_date = NOW()  WHERE user_id = {$id}";
             $showTime = mysqli_query($link, $lastLog);
 
-            $resetAttemptQuery = "UPDATE tbl_user SET user_attempt = 0 WHERE user_id = {$id}";
-            $resetAttempt = mysqli_query($link, $resetAttemptQuery);
+            $clearAttemptQuery = "UPDATE tbl_user SET user_attempt = 0 WHERE user_id = {$id}";
+            $clearAttempt = mysqli_query($link, $clearAttemptQuery);
             redirect_to("admin_index.php");
         } else {
             $user_attempt = 3 - $user_attempt - 1; //
-            $IncreaseAttemptQuery = "UPDATE tbl_user SET user_attempt = user_attempt + 1 WHERE user_id={$id}";
-            $resetAttempt = mysqli_query($link, $IncreaseAttemptQuery);
+            $increse = "UPDATE tbl_user SET user_attempt = user_attempt + 1 WHERE user_id={$id}";
+            $clearAttempt = mysqli_query($link, $increse);
 
             $message = "Login Attempt failed <br> Verify your user id and password and try again."; //message to display if login fails
             if ($user_attempt < 3) { //if user_attempt <3 times display $message and number of attempt
