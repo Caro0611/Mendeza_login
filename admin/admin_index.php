@@ -5,8 +5,8 @@ confirm_logged_in();
 <!doctype html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>WELCOME!</title>
+ <meta charset="UTF-8">
+ <title>WELCOME!</title>
 </head>
 <body>
 <?php

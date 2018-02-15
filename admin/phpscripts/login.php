@@ -20,21 +20,22 @@ function logIn($username, $password, $ip)
 
             $update = "UPDATE tbl_user SET user_ip='{$ip}' WHERE user_id={$id}";
             $updatequery = mysqli_query($link, $update);
+
             //date and time of LAST login
-            $lastTime = "UPDATE tbl_user SET user_date = NOW()  WHERE user_id = {$id}";
-            $showTime = mysqli_query($link, $lastTime);
+            $lastLog = "UPDATE tbl_user SET user_date = NOW()  WHERE user_id = {$id}";
+            $showTime = mysqli_query($link, $lastLog);
 
             $resetAttemptQuery = "UPDATE tbl_user SET user_attempt = 0 WHERE user_id = {$id}";
             $resetAttempt = mysqli_query($link, $resetAttemptQuery);
             redirect_to("admin_index.php");
         } else {
-            $user_attempt = 3 - $user_attempt - 1;
+            $user_attempt = 3 - $user_attempt - 1; //
             $IncreaseAttemptQuery = "UPDATE tbl_user SET user_attempt = user_attempt + 1 WHERE user_id={$id}";
             $resetAttempt = mysqli_query($link, $IncreaseAttemptQuery);
 
-            $message = "Login Attempt failed <br> Verify your user id and password and try again.";
+            $message = "Login Attempt failed <br> Verify your user id and password and try again."; //message to display if login fails
             if ($user_attempt < 3) { //if user_attempt <3 times display $message and number of attempt
-                $message .= "You have {$user_attempt} times more before get locked.";
+                $message .= "You have {$user_attempt} more attempts."; //displays numbers of attempts left
             } else {
                 $message = 'locked';
             }

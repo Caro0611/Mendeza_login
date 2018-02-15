@@ -25,21 +25,21 @@ if (isset($_POST['submit'])) {
 <?php if ($message !== 'locked') {
     echo $message;
     ?>
-    <div id="container">
-        <h1 class="title">LOGIN</h1>
-        <h2 id=textEnter>Please enter your Admin username and password to continue</h2>
-        <section id="formSect">
-            <form action="admin_login.php" method="post">
-                <label class="hidden">Username:</label>
-                <input type="text" name="username" placeholder="username" value="">
-                <br>
-                <label class="hidden">Password</label>
-                <input type="password" name="password" placeholder="password" value="">
-                <br><br>
-                <input type="submit" name="submit" value="Sign In" class="button">
-            </form>
-        </section>
-    </div>
+  <div id="container">
+    <h1 class="title">LOGIN</h1>
+    <h2 id=textEnter>Please enter your Admin username and password to continue</h2>
+    <section id="formSect">
+      <form action="admin_login.php" method="post">
+       <label class="hidden">Username:</label>
+       <input type="text" name="username" placeholder="username" value="">
+       <br>
+       <label class="hidden">Password</label>
+       <input type="password" name="password" placeholder="password" value="">
+       <br><br>
+       <input type="submit" name="submit" value="Sign In" class="button">
+      </form>
+    </section>
+  </div>
 <?php } else { ?>
     <div id="container">
         <h1 class="title">LOGIN</h1>
